@@ -31,7 +31,7 @@
 		}
 		else{
 			console.log("Can't log in");
-			document.location.href='file:///$PWD/signin.html';
+			document.location.href='file:///var/www/html/pick-me-up/signin.html';
 		}
 	});
 
