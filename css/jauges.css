@@ -1,0 +1,19 @@
+div.round {
+	margin: 50px;
+	width: 200px; height: 200px;
+	position: relative;
+}
+
+div.round input {
+	position: absolute;
+	top: 50px; left: 50px;
+	font-size: 60px; text-align: center;
+	width: 100px;
+	border: none; background: none;
+	outline: none;
+}
+
+div.round canvas{
+	position: absolute;
+	top:0; left: 0; right: 0; bottom: 0;
+}
