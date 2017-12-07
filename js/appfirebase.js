@@ -15,7 +15,7 @@
 	const btnSignOut = document.getElementById('btnSignOut');
 
 
-	
+
 
 	//Log out event
 	btnSignOut.addEventListener('click', e => {
@@ -31,7 +31,7 @@
 		}
 		else{
 			console.log("Can't log in");
-			document.location.href='file:///var/www/html/pick-me-up/signin.html';
+			document.location.href='signin.html';
 		}
 	});
 

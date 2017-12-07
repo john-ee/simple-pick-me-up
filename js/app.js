@@ -51,7 +51,7 @@
 		if(firebaseUser) {
 			console.log(firebaseUser);
 			btnSignOut.classList.remove('hide');
-			document.location.href='file:///var/www/html/pick-me-up/signin.html';
+			document.location.href='index.html';
 		}
 		else{
 			console.log("Can't log in");
