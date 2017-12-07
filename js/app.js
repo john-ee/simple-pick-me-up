@@ -51,7 +51,7 @@
 		if(firebaseUser) {
 			console.log(firebaseUser);
 			btnSignOut.classList.remove('hide');
-			document.location.href='file:///home/simeoni/Documents/Web/mapage.html';
+			document.location.href='file:///$PWD/index.html';
 		}
 		else{
 			console.log("Can't log in");
