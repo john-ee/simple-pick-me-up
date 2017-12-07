@@ -2,10 +2,13 @@
 
 	//Init Firebase
 	const config = {
-	    apiKey: "AIzaSyCa2WkqUPFA75dVje_Xqv0EVW4bHJaQoh0",
-	    authDomain: "iot-project-1e8b6.firebaseapp.com",
-	    databaseURL: "https://iot-project-1e8b6.firebaseio.com/",
-	    storageBucket: "gs://iot-project-1e8b6.appspot.com/",
+		apiKey: "AIzaSyDGDb7UPuSQ6ZwVrI0zBnSj2tluCqLtbwM",
+		authDomain: "pickmeup-b6abc.firebaseapp.com",
+		databaseURL: "https://pickmeup-b6abc.firebaseio.com",
+		projectId: "pickmeup-b6abc",
+		storageBucket: "pickmeup-b6abc.appspot.com",
+		messagingSenderId: "787993144427"
+
 	};
 	firebase.initializeApp(config);
 
