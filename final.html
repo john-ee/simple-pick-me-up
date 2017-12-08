@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 50%;
+        width: 50%;
+        position:relative;
+        padding-bottom: 30%;
+      }
+    </style>
+    <title>Pick Me Up</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/radio.css"/>
+    <link href="css/dashboard.css" rel="stylesheet">
+
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
+  	<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
+  	<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-database.js"></script>
+
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Les INOCS BG</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse mynav-sidebar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.html">Index</a></li>
+            <li><a id="btnSignOut" href="signin.html">Log Out</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input class="form-control" placeholder="Search..." type="text">
+          </form>
+        </div>
+      </div>
+  </nav>
+
+  <header>
+      <h1>Pick Me Up - RadioKing Musique</h1>
+      <h2>Par l'équipe Nina et les Prisonniers de Noël</h2>
+  </header>
+
+  <nav>
+      <ul>
+          <a href="index.html">Main Page</a>
+      </ul>
+  </nav>
+
+  <section>
+      <aside>
+          <h1>À propos de l'auteur</h1>
+          <p>Nina et les Prisonniers de Noël - RT-INOC</p>
+      </aside>
+      <article>
+          <h1>Chaînes 1</h1>
+          <table>
+              <tr>
+                  <th>Artist</th>
+                  <th>Title</th>
+                  <th>Album</th>
+                  <th>Cover</th>
+                  <th>Buy link</th>
+                  <th>Start at</th>
+                  <th>End at</th>
+                  <th>Duration</th>
+              </tr>
+              <tr>
+                  <th id="artist_name"></th>
+                  <th id="son_title"></th>
+                  <th id="album_name"></th>
+                  <th id="cover_link"></th>
+                  <th id="buy"></th>
+                  <th id="start"></th>
+                  <th id="end"></th>
+                  <th id="son_duration"></th>
+              </tr>
+          </table>
+          <img id="cover_img" alt="cover">
+          <video controls autoplay name="media">
+              <source src="http://listen.radioking.com/radio/116593/stream/155905" type="audio/mpeg">
+          </video>
+          <!-- <button onclick="testFunction()">Try it</button> -->
+
+      </article>
+  </section>
+
+  <div id="map"></div>
+    <script>
+      function initMap() {
+        // Styles a map in night mode.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 46.52863469527167, lng: 2.43896484375},
+          zoom: 5,
+          styles: [
+            {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
+            {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
+            {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+            {
+              featureType: 'administrative.locality',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#d59563'}]
+            },
+            {
+              featureType: 'poi',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#d59563'}]
+            },
+            {
+              featureType: 'poi.park',
+              elementType: 'geometry',
+              stylers: [{color: '#263c3f'}]
+            },
+            {
+              featureType: 'poi.park',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#6b9a76'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'geometry',
+              stylers: [{color: '#38414e'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'geometry.stroke',
+              stylers: [{color: '#212a37'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#9ca5b3'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'geometry',
+              stylers: [{color: '#746855'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'geometry.stroke',
+              stylers: [{color: '#1f2835'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#f3d19c'}]
+            },
+            {
+              featureType: 'transit',
+              elementType: 'geometry',
+              stylers: [{color: '#2f3948'}]
+            },
+            {
+              featureType: 'transit.station',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#d59563'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'geometry',
+              stylers: [{color: '#17263c'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#515c6d'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'labels.text.stroke',
+              stylers: [{color: '#17263c'}]
+            }
+          ]
+        });
+      var infoWindow = new google.maps.InfoWindow({map: map});
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('User found.');
+            map.setCenter(pos);
+            map.setZoom(16);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+      }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGdpDY8VFLo5zCFVPDUt0Ir6txrCq0wCU&callback=initMap"
+    async defer></script>
+
+
+  <footer>
+      <p>Copyright Nina et les Prisonniers de Noël - Tous droits réservés<br />
+  </footer>
+
+  </body>
+
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.js"></script>
+
+    <script type="text/javascript" src="js/appfirebase.js"></script>
+
+    <!-- script type="text/javascript" src="js/jauges.js"></script -->
+    <script type="text/javascript" src="js/user-db.js"></script>
+
+    <script type="text/javascript" src="js/radio.js"></script>
+    <script type="text/javascript" src="js/radio.json"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+
+
+
+</html>

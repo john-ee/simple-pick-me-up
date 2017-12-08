@@ -71,7 +71,6 @@
                     <th>Artist</th>
                     <th>Title</th>
                     <th>Album</th>
-                    <th>Cover</th>
                     <th>Buy link</th>
                     <th>Start at</th>
                     <th>End at</th>
@@ -81,7 +80,6 @@
                     <th id="artist_name"></th>
                     <th id="son_title"></th>
                     <th id="album_name"></th>
-                    <th id="cover_link"></th>
                     <th id="buy"></th>
                     <th id="start"></th>
                     <th id="end"></th>
@@ -89,17 +87,20 @@
                 </tr>
             </table>
             <img id="cover_img" alt="cover">
-          </section>
-          <video controls autoplay name="media">
+            <video controls autoplay name="media">
               <source src="http://listen.radioking.com/radio/116593/stream/155905" type="audio/mpeg">
-          </video>
-          <!-- <button onclick="testFunction()">Try it</button> -->
+            </video>
+          </section>
+        <div id="map"></div>
 
       </article>
+
   </section>
 
+
+
   <footer>
-      <p>Copyright Nina et les Prisonniers de Noël - Tous droits réservés<br />
+      <p>Powered by the Team Nina et les Prisonniers de Noël<br />
   </footer>
 
   </body>
@@ -118,8 +119,10 @@
     <script type="text/javascript" src="js/user-db.js"></script>
 
     <script type="text/javascript" src="js/radio.js"></script>
-    <script type="text/javascript" src="js/radio.json"></script>
+    <script type="text/javascript" src="js/map.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGdpDY8VFLo5zCFVPDUt0Ir6txrCq0wCU&callback=initMap"
+    async defer></script>
 
 
 
