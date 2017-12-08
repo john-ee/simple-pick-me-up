@@ -162,11 +162,6 @@ function valueInput(newValue, ID){
 			li.innerText=data;
 			li.id = snap.key;
 			humList.appendChild(li);
-			if(i == keys.length-1){
-				// console.log(scores[k].light.data);
-				valueInput(Math.round(scores[k].arduino2.Humidity.data), 'valueHum');
-
-			}
 		}
 	});
 
