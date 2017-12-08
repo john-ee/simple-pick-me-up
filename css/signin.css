@@ -1,19 +1,45 @@
+
+.signin {
+  text-align: center;
+  padding: 0% 1.5% 3%;
+  background-color: rgba(0, 0, 0, 0.35);
+  max-width: 350px;
+  margin: auto;
+}
+
 body {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #eee;
+  background-image: url("../images/fond-ecran.jpg");
+  background-position: 25% 75%;
+  padding-top: 4%;
+  padding-bottom: 4%;
+}
+
+h2 {
+  letter-spacing: 0.2em;
+  font-family: Times New Roman;
+  color: whitesmoke;
+  text-shadow: 0.1px 0.1px 1px #7f8c8d;
+  font-weight: 600;
+}
+h4 {
+  color: rgb(230,230,230);
+}
+
+.btn-primary {
+  margin: 0.8em 15px;
+  background-color: #7f8c8d;
+  border-color: rgba(102,175,233,.6);
 }
 
 .input {
   max-width: 330px;
-  padding: 15px;
+  padding: 5%;
   margin: 0 auto;
 }
 
 
 .form-signin {
   max-width: 330px;
-  padding: 15px;
   margin: 0 auto;
 }
 .form-signin .form-signin-heading,
