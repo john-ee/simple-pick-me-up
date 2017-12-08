@@ -7,10 +7,12 @@ function valueInput(newValue, ID){
 
 	//Init Firebase
 	const config = {
-	    apiKey: "AIzaSyCa2WkqUPFA75dVje_Xqv0EVW4bHJaQoh0",
-	    authDomain: "iot-project-1e8b6.firebaseapp.com",
-	    databaseURL: "https://iot-project-1e8b6.firebaseio.com/",
-	    storageBucket: "gs://iot-project-1e8b6.appspot.com/",
+		apiKey: "AIzaSyDGDb7UPuSQ6ZwVrI0zBnSj2tluCqLtbwM",
+		authDomain: "pickmeup-b6abc.firebaseapp.com",
+		databaseURL: "https://pickmeup-b6abc.firebaseio.com",
+		projectId: "pickmeup-b6abc",
+		storageBucket: "pickmeup-b6abc.appspot.com",
+		messagingSenderId: "787993144427"
 	};
 
 
@@ -19,7 +21,7 @@ function valueInput(newValue, ID){
 	const tempList = document.getElementById('tempList');
 	const humList = document.getElementById('humList');
 	const noiseList = document.getElementById('noiseList');
-	
+
 	//Create references
 	database = firebase.database();
 
@@ -34,7 +36,7 @@ function valueInput(newValue, ID){
 		var scores = snap.val();
 		var keys = Object.keys(scores);
 		// console.log(keys);
-		
+
 		for(var i = keys.length-1; i >= 0; i--) {
 			// console.log('valuuuuuuuuuuuuuuuuuues');
 			var k = keys[i];
@@ -70,7 +72,7 @@ function valueInput(newValue, ID){
 		var scores = snap.val();
 		var keys = Object.keys(scores);
 
-		
+
 		for(var i = keys.length-1; i >= 0; i--) {
 			// console.log('valuuuuuuuuuuuuuuuuuues');
 			//console.log(keys.length - 1,i, keys[i]);
@@ -109,7 +111,7 @@ function valueInput(newValue, ID){
 		var scores = snap.val();
 		var keys = Object.keys(scores);
 
-		
+
 		for(var i = keys.length-1; i >= 0; i--) {
 			// console.log('valuuuuuuuuuuuuuuuuuues');
 			//console.log(keys.length - 1,i, keys[i]);
@@ -148,7 +150,7 @@ function valueInput(newValue, ID){
 		var scores = snap.val();
 		var keys = Object.keys(scores);
 
-		
+
 		for(var i = keys.length-1; i >= 0; i--) {
 			// console.log('valuuuuuuuuuuuuuuuuuues');
 			//console.log(keys.length - 1,i, keys[i]);
@@ -219,7 +221,7 @@ function valueInput(newValue, ID){
 			var scores = snap.val();
 			var keys = Object.keys(scores);
 			// console.log(keys);
-			
+
 			for(var i = 0; i < keys.length; i++) {
 				// console.log('valuuuuuuuuuuuuuuuuuues');
 				var k = keys[i];
@@ -280,7 +282,7 @@ function valueInput(newValue, ID){
 			var scores = snap.val();
 			var keys = Object.keys(scores);
 			// console.log(keys);
-			
+
 			for(var i = 0; i < keys.length; i++) {
 				// console.log('valuuuuuuuuuuuuuuuuuues');
 				var k = keys[i];
@@ -341,7 +343,7 @@ function valueInput(newValue, ID){
 			var scores = snap.val();
 			var keys = Object.keys(scores);
 			// console.log(keys);
-			
+
 			for(var i = 0; i < keys.length; i++) {
 				// console.log('valuuuuuuuuuuuuuuuuuues');
 				var k = keys[i];
@@ -401,7 +403,7 @@ function valueInput(newValue, ID){
 			var scores = snap.val();
 			var keys = Object.keys(scores);
 			// console.log(keys);
-			
+
 			for(var i = 0; i < keys.length; i++) {
 				// console.log('valuuuuuuuuuuuuuuuuuues');
 				var k = keys[i];
