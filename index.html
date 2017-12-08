@@ -7,7 +7,7 @@
 
     <link href="css/index.css" rel="stylesheet">
 
-    <title>Pick Me Up</title>
+    <title id="main_title">Pick Me Up</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -18,8 +18,6 @@
     <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
   	<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
   	<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-database.js"></script>
-
-
   </head>
 
   <body>
@@ -46,36 +44,52 @@
       </div>
   </nav>
 
-  <section>
+  <section class="page_section">
       <aside>
-          <h1>À propos de l'auteur</h1>
-          <p>Nina et les Prisonniers de Noël - RT-INOC</p>
+          <img class="logo_aside" src="images/logo.png">
+          <h1 class="aside_about">À propos de l'auteur</h1>
+          <p class="team">Nina et les Prisonniers de Noël</p>
+          <ul>
+            <li>Félix Ah Kane</li>
+            <li>Jason Baily</li>
+            <li>Loic Hourdin</li>
+            <li>John-Nathan Hill</li>
+            <li>Magdeleine Lebrun</li>
+            <li>Lorenzo Simeoni</li>
+            <li>Wenxin Tang</li>
+            <li>Alain Xayphrarath</li>
+          </ul>
+          <p class="team">Filière RT-INOC TPS</p>
+          <p class="team">M2 RISE - URF Math Info</p>
+
       </aside>
       <article>
-          <h1>Chaînes 1</h1>
-          <table>
-              <tr>
-                  <th>Artist</th>
-                  <th>Title</th>
-                  <th>Album</th>
-                  <th>Cover</th>
-                  <th>Buy link</th>
-                  <th>Start at</th>
-                  <th>End at</th>
-                  <th>Duration</th>
-              </tr>
-              <tr>
-                  <th id="artist_name"></th>
-                  <th id="son_title"></th>
-                  <th id="album_name"></th>
-                  <th id="cover_link"></th>
-                  <th id="buy"></th>
-                  <th id="start"></th>
-                  <th id="end"></th>
-                  <th id="son_duration"></th>
-              </tr>
-          </table>
-          <img id="cover_img" alt="cover">
+          <h1 class="titre_article">Radio La Nuit de l'Info</h1>
+          <section class="article_section">
+            <table id="son_info">
+                <tr>
+                    <th>Artist</th>
+                    <th>Title</th>
+                    <th>Album</th>
+                    <th>Cover</th>
+                    <th>Buy link</th>
+                    <th>Start at</th>
+                    <th>End at</th>
+                    <th>Duration</th>
+                </tr>
+                <tr>
+                    <th id="artist_name"></th>
+                    <th id="son_title"></th>
+                    <th id="album_name"></th>
+                    <th id="cover_link"></th>
+                    <th id="buy"></th>
+                    <th id="start"></th>
+                    <th id="end"></th>
+                    <th id="son_duration"></th>
+                </tr>
+            </table>
+            <img id="cover_img" alt="cover">
+          </section>
           <video controls autoplay name="media">
               <source src="http://listen.radioking.com/radio/116593/stream/155905" type="audio/mpeg">
           </video>

@@ -1,7 +1,7 @@
 body {
 	font-family: arial;
-	/*background-color: #0d1a26;*/
-
+	background-color: #eee;
+	margin-top: 0.1%;
 }
 
 header {
@@ -12,14 +12,113 @@ header {
 	background-color: #006080;
 	margin-top: 0;
 }
-table {
-	width: 100%;
+
+.container-fluid {
+	background-color: #0d1a26; 
+}
+
+#main_title {
+	color: #eee;
+}
+
+.navbar-brand {
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.page_section {
+	height: 100%;
+	display: flex;
+	/*flex-direction: row;*/
+/*	border: 1px solid blue;
+*/}
+
+aside {
+	width: 15%;
+	order: 1; 
+	background-color: #b3b3b3;
+	display: flex;
+	flex-direction: column;
+
+}
+article {
+	width: 85%;
+	height: auto;
+	order: 2;
+	display: flex;
+	flex-direction: column;
+}
+
+.logo_aside {
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+	height: auto;
+	margin-top: 10%;
+	margin-bottom: 5%;
+}
+
+.aside_about {
+	margin-left: 5% ;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+ul  {
+	margin-left: 5% ;
+	list-style: none;
+}
+
+.team {
+	margin-left: 5% ;
+	font-weight: bold;
+}
+
+
+.titre_article {
+	font-weight: bold;
+	font-size: 24px;
+	margin-left: 3%;
+}
+
+.article_section {
+	display: flex;
+	flex-direction: row;
+	margin-left: 3%;
+	height: 100%;
+	border: 1px solid red;
+}
+
+#son_info {
+	width: 50%;
+	order: 1;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	/*flex: 7;*/
 }
 
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
 }
+
 th, td {
-    padding: 15px;
+    padding: 10px;
 }
+
+#cover_img {
+	order: 2;
+	width: auto;
+	height: 70%;
+/*	padding-left: 20%;*/
+	border: 1px solid purple;
+	margin-left: 25%;
+	/*margin-left: 20%;*/
+}
+
+
+footer {
+	/*background-color: #006080;*/
+}
+
+
