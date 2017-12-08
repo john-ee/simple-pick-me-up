@@ -78,6 +78,13 @@
 
 <div id="map"></div>
     <script>
+      function writeUserData(userId, name, email) {
+        firebase.database().ref('users/' + userId).set({
+        username: name,
+        email: email
+        });
+      }
+
       function initMap() {
         // Styles a map in night mode.
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -197,6 +204,7 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGdpDY8VFLo5zCFVPDUt0Ir6txrCq0wCU&callback=initMap"
     async defer></script>
+
 
 
 </html>
