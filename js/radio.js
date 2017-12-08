@@ -4,17 +4,6 @@ xhReq.open("GET", 'https://www.radioking.com/widgets/currenttrack.php?radio=1165
 xhReq.send(null);
 var jsonObject = JSON.parse(xhReq.responseText);
 
-
-// console.log(jsonObject);
-// console.log(jsonObject.artist);
-// console.log(jsonObject.title);
-// console.log(jsonObject.album);
-// console.log(jsonObject.cover);
-// console.log(jsonObject.buy_link);
-// console.log(jsonObject.started_at);
-// console.log(jsonObject.end_at);
-// console.log(jsonObject.duration);	
-
 document.getElementById("artist_name").innerHTML = jsonObject.artist;
 document.getElementById("son_title").innerHTML = jsonObject.title;
 document.getElementById("album_name").innerHTML = jsonObject.album;
